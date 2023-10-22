@@ -1,0 +1,7 @@
+flutter_native_splash:
+  color: "#ED2241"
+  image: assets/logo4.png
+  android: true
+  ios: true
+  android_gravity: fill
+  ios_content_mode: scaleAspectFill
