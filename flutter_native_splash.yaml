@@ -1,6 +1,6 @@
 flutter_native_splash:
   color: "#ED2241"
-  image: assets/logo4.png
+  image: assets/logo6.png
   android: true
   ios: true
   android_gravity: fill

@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:okay/screen3.dart';
 import 'package:okay/text_field.dart';
+import 'package:page_transition/page_transition.dart';
 
 import 'dimensions.dart';
 
@@ -82,7 +84,14 @@ class Screen2 extends StatelessWidget {
                 Row(
                   children: [
                     SizedBox(width: context.width*0.65,),
-                    Text('مكان الالتقاء',style: TextStyle(color: Colors.red,fontSize: Dimensions.font16*1.1),),
+                    InkWell(
+                        onTap: (){
+                          Navigator.pushReplacement(context, PageTransition(
+                              type: PageTransitionType.fade,
+                              duration: Duration(milliseconds: 530),
+                              child: Screen3()));
+                        },
+                        child: Text('مكان الالتقاء',style: TextStyle(color: Colors.red,fontSize: Dimensions.font16*1.1),)),
                     SizedBox(width: context.width*0.015,),
                     Image.asset('assets/point2.png'),
                   ],
@@ -108,10 +117,35 @@ class Screen2 extends StatelessWidget {
                         child: Image.asset('assets/line3.png')),
                   ],
                 ),
-                MyTextField3(hintText: '', obsecureText: true,),
-                SizedBox(height: context.height*0.016,),
-                MyButton2(onTap: (){}, text: 'دور على العربية')
+                Container(
+                  width: context.width*0.8,
+                  height: context.height*0.12,
+                  padding: EdgeInsets.only(right:context.width*0.036),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade100,
+                    border: Border.all(
+                      color: Colors.white,
+                      width: context.width * 0.003,
+                    ),
+                    borderRadius: BorderRadius.circular(
+                        Dimensions.radius20),
+                  ),
+                  child: TextFormField(
+                    textDirection: TextDirection.rtl,
+                    readOnly: false,
+                    maxLines: 5,
+                    cursorColor: Colors.grey,
+                    // Adjust the number of lines as needed (e.g., 3 or 5)
+                    decoration: InputDecoration(
+                      hintTextDirection: TextDirection.rtl,
+                      hintText: 'عندك أي ملاحظات تانية؟',
+                      border: InputBorder.none, // Remove the default border
+                    ),
 
+                  ),
+                ),
+                SizedBox(height: context.height*0.016,),
+                MyButton2(onTap: (){}, text: 'دور على العربية'),
               ],
             ),
             Column(
@@ -123,17 +157,6 @@ class Screen2 extends StatelessWidget {
                     Container(
                         height: context.height*0.08,
                         child: Image.asset('assets/line2.png')),
-                  ],
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                SizedBox(height: context.height*0.69,),
-                Row(
-                  children: [
-                    SizedBox(width: context.width*0.53,),
-                    Text('عندك اي ملاحظات تانية؟',style: TextStyle(color: Colors.grey),),
                   ],
                 ),
               ],

@@ -167,6 +167,88 @@ class MyTextField3 extends StatelessWidget {
     );
   }
 }
+class MyTextField5 extends StatelessWidget {
+  final controller;
+  final String hintText;
+  final bool obsecureText;
+  final  suffixicon;
+  final validator;
+  const MyTextField5({Key? key, this.suffixicon, this.controller, required this.hintText, required this.obsecureText, this.validator,}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: EdgeInsets.symmetric(horizontal: 33),
+      child: TextFormField(
+        textDirection: TextDirection.rtl,
+        validator: validator,
+        controller: controller,
+        obscureText: obsecureText,
+        decoration: InputDecoration(
+          alignLabelWithHint: true,
+          hintTextDirection:TextDirection.rtl ,
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(20)
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          fillColor: Colors.grey.shade100,
+          filled:true,
+          hintText: hintText,
+          hintStyle: GoogleFonts.montserrat(color: Colors.black,),
+          labelStyle: GoogleFonts.montserrat(color: Colors.black,fontWeight: FontWeight.w500),
+          contentPadding: EdgeInsets.symmetric(vertical: 15,horizontal: 18),
+          prefixIcon: suffixicon,
+        ),
+      ),
+    );
+  }
+}
+class MyTextField6 extends StatelessWidget {
+  final controller;
+  final String hintText;
+  final bool obsecureText;
+  final  suffixicon;
+  final validator;
+  const MyTextField6({Key? key, this.suffixicon, this.controller, required this.hintText, required this.obsecureText, this.validator,}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: EdgeInsets.symmetric(horizontal: context.width*0.045),
+      child: TextFormField(
+        textDirection: TextDirection.rtl,
+        validator: validator,
+        controller: controller,
+        obscureText: obsecureText,
+        cursorColor: Colors.black26,
+        decoration: InputDecoration(
+          alignLabelWithHint: true,
+          hintTextDirection:TextDirection.rtl ,
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(20)
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          fillColor: Colors.grey.shade100,
+          filled:true,
+          hintText: hintText,
+          hintStyle: GoogleFonts.montserrat(color: Colors.grey,),
+          labelStyle: GoogleFonts.montserrat(color: Colors.black,fontWeight: FontWeight.w500),
+          contentPadding: EdgeInsets.symmetric(vertical: context.height*0.02,horizontal: context.width*0.04),
+          prefixIcon: suffixicon,
+          prefixIconColor: Colors.grey,
+        ),
+      ),
+    );
+  }
+}
 
 //////////////////////Button\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 class MyButton extends StatelessWidget {

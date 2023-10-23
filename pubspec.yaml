@@ -90,6 +90,8 @@ flutter:
     - assets/line3.png
     - assets/nav.png
     - assets/logo.png
+    - assets/grey.png
+    - assets/location.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
