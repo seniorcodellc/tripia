@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         navigatorKey: AppService().navigatorKey,
         onGenerateRoute:RouteGenerator.getRoute,
         title: AppStrings.tripia,
-        home: const validator(),
+        //home: const validator(),
       ),
     );
   }
