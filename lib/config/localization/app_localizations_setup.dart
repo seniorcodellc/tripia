@@ -1,12 +1,7 @@
-import 'dart:convert';
-import 'dart:ui';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 
 import 'app_localizations.dart';
-import 'app_localizations_delgate.dart';
 
 
 class AppLocalizationSetup {

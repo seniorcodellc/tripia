@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:tripia_user/features/booking_screens/presentation/pages/booking_screen_1.dart';
-import 'package:tripia_user/features/booking_screens/presentation/pages/booking_screen_final.dart';
-import 'package:tripia_user/features/onBoardingScreens/presentation/pages/onboarding_1.dart';
-import 'package:tripia_user/features/onBoardingScreens/presentation/pages/onboarding_2.dart';
-import 'package:tripia_user/features/onBoardingScreens/presentation/pages/onboarding_3.dart';
-import 'package:tripia_user/features/verificationScreens/presentation/pages/login_screen.dart';
-import 'package:tripia_user/features/verificationScreens/presentation/pages/signup_screen.dart';
+import 'package:tripia_user/features/comman/onBoardingScreens/presentation/pages/onboarding_1.dart';
+import 'package:tripia_user/features/comman/onBoardingScreens/presentation/pages/onboarding_2.dart';
+import 'package:tripia_user/features/comman/onBoardingScreens/presentation/pages/onboarding_3.dart';
+import 'package:tripia_user/features/comman/splashScreen/presentation/pages/splash_screen.dart';
+import 'package:tripia_user/features/user/booking_screens/presentation/pages/booking_screen_1.dart';
+import 'package:tripia_user/features/user/booking_screens/presentation/pages/booking_screen_final.dart';
+import 'package:tripia_user/features/user/verificationScreens/presentation/pages/login_screen.dart';
+import 'package:tripia_user/features/user/verificationScreens/presentation/pages/signup_screen.dart';
 
 import '../../core/utils/app-color.dart';
-import '../../features/splashScreen/presentation/pages/splash_screen.dart';
+
 enum PageRouteAnimation { Fade, Scale, Rotate, Slide, SlideBottomTop }
 
 class Routes {
@@ -46,36 +47,42 @@ class Routes {
   static const String splashLargeRoute = "/splashlarge";
   static const String splashWithTextRoute = "/splashWithText";
   static const String signFirstRoute = "/signupfirst";
-
 }
-
 
 class RouteGenerator {
   RouteGenerator._internal();
   PageRouteAnimation? pageRouteAnimationGlobal;
   static Duration pageRouteTransitionDurationGlobal = 400.milliseconds;
 
-
   static Route<dynamic>? getRoute(RouteSettings routeSettings) {
     debugPrint(routeSettings.name);
     switch (routeSettings.name) {
       case Routes.splashRoute:
-        return buildPageRoute(child: const SplashScreen(), routeSettings: routeSettings,pageRouteAnimation:PageRouteAnimation.Fade );
+        return buildPageRoute(
+            child: const SplashScreen(), routeSettings: routeSettings, pageRouteAnimation: PageRouteAnimation.Fade);
       case Routes.onboarding1:
-        return buildPageRoute(child: const OnBoarding1(), routeSettings: routeSettings,pageRouteAnimation:PageRouteAnimation.Fade);
+        return buildPageRoute(
+            child: const OnBoarding1(), routeSettings: routeSettings, pageRouteAnimation: PageRouteAnimation.Fade);
       case Routes.onboarding2:
-        return buildPageRoute(child: const OnBoarding2(), routeSettings: routeSettings,pageRouteAnimation:PageRouteAnimation.Fade);
+        return buildPageRoute(
+            child: const OnBoarding2(), routeSettings: routeSettings, pageRouteAnimation: PageRouteAnimation.Fade);
       case Routes.onboarding3:
-         return buildPageRoute(child: const OnBoarding3(), routeSettings: routeSettings,pageRouteAnimation:PageRouteAnimation.Fade);
+        return buildPageRoute(
+            child: const OnBoarding3(), routeSettings: routeSettings, pageRouteAnimation: PageRouteAnimation.Fade);
       case Routes.loginRoute:
-        return buildPageRoute(child: const LoginScreen(), routeSettings: routeSettings,pageRouteAnimation:PageRouteAnimation.Fade);
+        return buildPageRoute(
+            child: const LoginScreen(), routeSettings: routeSettings, pageRouteAnimation: PageRouteAnimation.Fade);
       case Routes.signupRoute:
-        return buildPageRoute(child: const SignupScreen(), routeSettings: routeSettings,pageRouteAnimation:PageRouteAnimation.Fade);
+        return buildPageRoute(
+            child: const SignupScreen(), routeSettings: routeSettings, pageRouteAnimation: PageRouteAnimation.Fade);
       case Routes.bookingScreen1Route:
-        return buildPageRoute(child: const BookingScreen1(), routeSettings: routeSettings,pageRouteAnimation:PageRouteAnimation.Fade);
+        return buildPageRoute(
+            child: const BookingScreen1(), routeSettings: routeSettings, pageRouteAnimation: PageRouteAnimation.Fade);
       case Routes.bookingScreenFinal:
-        return buildPageRoute(child: const BookingScreenFinal(), routeSettings: routeSettings,pageRouteAnimation:PageRouteAnimation.Fade);
-
+        return buildPageRoute(
+            child: const BookingScreenFinal(),
+            routeSettings: routeSettings,
+            pageRouteAnimation: PageRouteAnimation.Fade);
     }
     return buildPageRoute(
         child: const Center(

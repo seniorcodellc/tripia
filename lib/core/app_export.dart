@@ -1,0 +1,24 @@
+export 'package:flutter_svg/svg.dart';
+export 'package:get/get.dart';
+export 'package:page_transition/page_transition.dart';
+export '../../../../../core/utils/app-assets.dart';
+export '../../../../../core/utils/app-color.dart';
+export '../../../../../core/utils/app-string.dart';
+export '../../../../../core/utils/app_fonts.dart';
+export 'utils/widgets/dimensions.dart';
+export 'package:tripia_user/config/routes/app_routes.dart';
+
+export 'package:tripia_user/features/user/carScreens/presentation/widgets/buttons.dart';
+export 'package:tripia_user/features/user/travelScreens/presentation/pages/travel_screen.dart';
+export 'package:tripia_user/features/user/booking_screens/presentation/pages/booking_screen_1.dart';
+export 'package:tripia_user/core/utils/size-utils.dart';
+export 'package:tripia_user/features/user/booking_screens/presentation/pages/booking_screen_confirm_loc.dart';
+export 'package:tripia_user/features/user/booking_screens/presentation/widgets/bottom_sheet_destination.dart';
+export 'package:tripia_user/features/user/booking_screens/presentation/widgets/bottom_sheet_notes.dart';
+export 'package:tripia_user/features/user/booking_screens/presentation/widgets/bottom_sheet_place.dart';
+export 'package:tripia_user/features/user/booking_screens/presentation/widgets/buttons.dart';
+export 'package:tripia_user/features/user/booking_screens/presentation/widgets/textfields.dart';
+export 'package:tripia_user/features/user/travelScreens/presentation/widgets/bottom_sheets.dart';
+export 'package:tripia_user/features/user/travelScreens/presentation/widgets/buttons.dart';
+export 'package:tripia_user/features/user/travelScreens/presentation/widgets/text_feilds.dart';
+export 'package:tripia_user/features/user/verificationScreens/presentation/widgets/social_media_container.dart';

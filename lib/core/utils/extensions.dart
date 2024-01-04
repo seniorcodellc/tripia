@@ -5,7 +5,6 @@ import 'package:tripia_user/core/utils/size-utils.dart';
 import '../../config/routes/app_routes_helper.dart';
 import 'app-string.dart';
 
-
 extension StringExtension on String {
   String get removeSpaces => replaceAll(' ', '');
   int get codeFromString {
@@ -17,7 +16,8 @@ extension StringExtension on String {
     } else if (formattedStringColor.startsWith('0X')) {
       formattedStringColor = formattedStringColor.replaceAll('0X', '');
     }
-    formattedStringColor = formattedStringColor.isLengthEqual(6) ? formattedStringColor.addAtStart('FF') : formattedStringColor;
+    formattedStringColor =
+        formattedStringColor.isLengthEqual(6) ? formattedStringColor.addAtStart('FF') : formattedStringColor;
     return int.parse(formattedStringColor, radix: 16);
   }
 
@@ -30,9 +30,11 @@ extension StringExtension on String {
     } else if (formattedStringColor.startsWith('0X')) {
       formattedStringColor = formattedStringColor.replaceAll('0X', '');
     }
-    formattedStringColor = formattedStringColor.isLengthEqual(6) ? formattedStringColor.addAtStart('FF') : formattedStringColor;
+    formattedStringColor =
+        formattedStringColor.isLengthEqual(6) ? formattedStringColor.addAtStart('FF') : formattedStringColor;
     return Color(int.parse(formattedStringColor, radix: 16));
   }
+
   dynamic get fromStringToJson => jsonDecode(this);
   String get capitalize => toUpperCase();
   String addAtStart(String start) => "$start$this";
@@ -42,27 +44,32 @@ extension StringExtension on String {
   //   return AppLocalizations.of(AppService().getContext)!.translate(this) ?? this;
   // }
   String get trans => this.tr();
+
   /// Returns true if given String is null or isEmpty
   bool get isEmptyOrNull => (isEmpty) || (this == 'null');
   String validate({String value = ''}) {
     if (isEmptyOrNull) {
       return value;
     } else {
-      return this!;
+      // TODO: was this!
+      return this;
     }
   }
+
   String? get validatePassword {
     if (isEmpty || trim().isEmpty || length < 6) {
       return AppStrings.passwordError.tr();
     }
     return null;
   }
-  String? get validateUserName{
+
+  String? get validateUserName {
     if (isEmpty) {
       return AppStrings.userNameError.tr();
     }
     return null;
   }
+
   bool get _isEmail {
     const String emailRegex =
         '^([\\w\\d\\-\\+]+)(\\+[\\w\\d\\-\\+%]+)*([\\w\\-]+\\.){1,5}(([A-Za-z]){2,30}|xn--[A-Za-z0-9]{1,26})\$';
@@ -99,8 +106,9 @@ extension StringExtension on String {
     }
     return true;
   }
-  isEqualTo(value)=>this==value;
-  isNotEqualTo(value)=>this!=value;
+
+  isEqualTo(value) => this == value;
+  isNotEqualTo(value) => this != value;
   get getBack => pop();
 
   get moveToAndRemoveCurrent => pushRoute(this, isToReplace: true);
@@ -113,7 +121,8 @@ extension StringExtension on String {
 
   pushWithData(Map<String, dynamic>? arguments) => pushRoute(this, arguments: arguments);
 
-  pushAndRemoveAllWithDataUntil(Map<String, dynamic>? arguments) => pushRoute(this, isNewTask: true, arguments: arguments);
+  pushAndRemoveAllWithDataUntil(Map<String, dynamic>? arguments) =>
+      pushRoute(this, isNewTask: true, arguments: arguments);
   popScreen([Object? object]) => pop(object);
   popScreenWithArgument([Object? object]) => pop(object);
 
@@ -137,9 +146,10 @@ extension CutomMethodsOnNullObject on Object? {
   bool get isTrue => this == true;
   bool get isFalse => this == false;
 }
+
 extension CutomMethodsOnObject on Object {
-  isEqualTo(value)=>this==value;
-  isNotEqualTo(value)=>this!=value;
+  isEqualTo(value) => this == value;
+  isNotEqualTo(value) => this != value;
 }
 
 extension StringNullExtension on String? {
@@ -166,10 +176,11 @@ extension BullBoolExtension on bool? {
   /* null false , false false */
   bool get validate => this == null ? false : this!;
 }
+
 extension BoolExtension on bool {
   /* null false , false false */
-  bool get isFalse=>this==false;
-  bool get isTrue=>this==true;
+  bool get isFalse => this == false;
+  bool get isTrue => this == true;
 }
 
 extension ListExtension on List<dynamic>? {
@@ -185,13 +196,10 @@ extension DateTimeExtension on DateTime? {
   /* formate */
 }
 
-
-
-
 extension DynamicExtension on dynamic {
   Map<String, dynamic> get json => jsonDecode(this);
-  isEqualTo(value)=>this==value;
-  isNotEqualTo(value)=>this!=value;
+  isEqualTo(value) => this == value;
+  isNotEqualTo(value) => this != value;
 }
 
 extension MediaQueryValues on BuildContext {
@@ -206,7 +214,7 @@ extension DoubleExtension on double {
   double get w => getHorizontalSize(this);
   double get r => getVerticalSize(this);
 
-  SizedBox get vs => SizedBox(height:h);
+  SizedBox get vs => SizedBox(height: h);
   SizedBox get hs => SizedBox(width: w);
 // double get w=>getSize(this);
 }
